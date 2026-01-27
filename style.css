@@ -12,6 +12,204 @@ body, html {
     margin: 0 auto;
 }
 
+/* --- CONFIGURACIÓN GLOBAL --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px; /* Base para rem */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000a12;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- NAVEGACIÓN --- */
+.top-bar {
+    background-color: #111;
+    color: #00aaff;
+    font-size: 0.85rem;
+    padding: 12px 0;
+    font-weight: 600;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-nav {
+    background: #ffffff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-weight: 700;
+    color: #333;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    color: #00aaff;
+}
+
+/* --- SECCIÓN HERO (INICIO) --- */
+.hero-section-dynamic {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+/* --- TARJETAS GLASSMORPHISM --- */
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 60px 0;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 170, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #00aaff;
+    background: rgba(0, 170, 255, 0.05);
+}
+
+.service-card i {
+    font-size: 3.5rem;
+    color: #00aaff;
+    margin-bottom: 20px;
+}
+
+/* --- SECCIÓN NOSOTROS (BANNER CON CUADRO) --- */
+.parallax-impact {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-image: url('./fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax */
+    display: flex;
+    align-items: center;
+}
+
+.dark-overlay {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.glass-box-right {
+    position: relative;
+    z-index: 5;
+    background: rgba(10, 20, 40, 0.9);
+    padding: 50px;
+    max-width: 500px;
+    margin-left: auto; /* Empuja a la derecha */
+    border-right: 6px solid #00aaff;
+    backdrop-filter: blur(15px);
+}
+
+/* --- ANIMACIONES --- */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s all ease;
+}
+
+.reveal-text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    background: #fff;
+    color: #333;
+    padding: 50px 0 20px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    .nav-content { flex-direction: column; gap: 15px; }
+    .glass-box-right { margin: 0 auto; width: 95%; }
+    .parallax-impact { background-attachment: scroll; }
+}
+
 /* --- HEADER ESTILO NOVOTECH --- */
 header {
     background-color: #000000;
@@ -578,4 +776,5 @@ body::before {
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+
 }
