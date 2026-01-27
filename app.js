@@ -213,7 +213,7 @@ const paginas = {
                 
                 <div style="margin-top:10px; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 15px;">
                     <p style="color: #00aaff; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid rgba(0,170,255,0.2); padding-bottom: 5px;">
-                        <i class="far fa-clock"></i> Correo electrónico y teléfono :
+                         Correo electrónico y teléfono :
                     </p>
                     <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #ccc;">
                         <span>contacto@sspic.com.mx</span>
@@ -226,13 +226,13 @@ const paginas = {
                 </div>
 
                 <div style="text-align: center; margin-bottom: 30px;">
-                    <i class="fas fa-headset" style="font-size: 3.5rem; background: linear-gradient(45deg, #00aaff, #00ffcc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                    
                     <h3 style="margin-top: 20px; color: #fff;">Horario</h3>
                 </div>
                 
                 <div style="margin-top:10px; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 15px;">
                     <p style="color: #00aaff; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid rgba(0,170,255,0.2); padding-bottom: 5px;">
-                        <i class="far fa-clock"></i> Horario de atención Operativa:
+                         Horario de atención Operativa:
                     </p>
                     <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #ccc;">
                         <span>Lunes a Viernes:</span>
@@ -403,4 +403,5 @@ function iniciarObservadorScroll() {
     // Seleccionamos todos los elementos con la clase reveal-text
     const elementos = document.querySelectorAll('.reveal-text');
     elementos.forEach(el => observer.observe(el));
+
 }
