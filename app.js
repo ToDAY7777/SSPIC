@@ -127,10 +127,10 @@ const paginas = {
                     <i class="fas fa-handshake"></i>
                     <h3>Valores</h3>
                     <ul class="valores-list" style="text-align: left; margin-top: 15px;">
-                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-check-circle" style="color: #00aaff; font-size: 1rem; margin-right: 10px;"></i> Integridad técnica</li>
-                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-check-circle" style="color: #00aaff; font-size: 1rem; margin-right: 10px;"></i> Innovación constante</li>
-                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-check-circle" style="color: #00aaff; font-size: 1rem; margin-right: 10px;"></i> Compromiso con la calidad</li>
-                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-check-circle" style="color: #00aaff; font-size: 1rem; margin-right: 10px;"></i> Rapidez de respuesta</li>
+                        <li style="margin-bottom: 10px; color: #ccc;"> Integridad técnica</li>
+                        <li style="margin-bottom: 10px; color: #ccc;"> Innovación constante</li>
+                        <li style="margin-bottom: 10px; color: #ccc;"> Compromiso con la calidad</li>
+                        <li style="margin-bottom: 10px; color: #ccc;"> Rapidez de respuesta</li>
                     </ul>
                 </div>
 
@@ -405,3 +405,4 @@ function iniciarObservadorScroll() {
     elementos.forEach(el => observer.observe(el));
 
 }
+
