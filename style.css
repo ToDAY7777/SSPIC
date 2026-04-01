@@ -438,7 +438,7 @@ body::before {
 }
 
 .reveal-text {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(30px);
     transition: all 1s ease-out; /* Duración de la animación */
 }
@@ -803,6 +803,54 @@ body {
     font-size: 1.05rem;
     color: #ccc;
 }
+/* --- CONFIGURACIÓN IMAGE --- */
+.galeria-grid {
+                display: grid;
+                /* Fuerza exactamente 3 columnas del mismo tamaño */
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 20px;
+                margin-top: 20px;
+            }
+            .zoom-img-container {
+                overflow: hidden; 
+                border-radius: 15px; /* Bordes más redondeados como en tu foto */
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Sombra para dar profundidad */
+                aspect-ratio: 16/9; /* Proporción panorámica uniforme */
+            }
+            .zoom-img-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                transition: transform 0.4s ease;
+            }
+            .zoom-img-container:hover img {
+                transform: scale(1.1); /* Efecto de zoom del 10% */
+            }
+
+            /* Hacemos que en celulares se vea una imagen debajo de la otra */
+            @media (max-width: 768px) {
+                .galeria-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+/* --- CONFIGURACIÓN DE ANIMACIÓN DE TEXTO --- */
+/* Definimos los pasos de la animación 'slideInFromLeft' */
+       @keyframes slideFromLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideFromRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .card-left { animation: slideFromLeft 2.2s ease-out forwards; }
+        .card-right { animation: slideFromRight 2.2s ease-out forwards; }
+/* Creamos una clase para aplicar la animación */
+        .animate-from-left {
+            /* Ejecuta 'slideInFromLeft', dura 1.2 segundos, es suave al final, y mantiene el estado final visible */
+            animation: slideInFromLeft 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
 /* RESPONSIVO */
 @media (max-width: 768px) {
     .hero-content h1 { font-size: 2.2rem; }
@@ -820,4 +868,3 @@ body {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
-
