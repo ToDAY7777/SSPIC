@@ -74,8 +74,28 @@ const paginas = {
 
     </div>
         </section>
+
+    <section class="content-section container" style="padding-bottom: 80px;">
+            <div class="nosotros-header reveal-text" style="background: transparent; padding: 0 0 40px 0;">
+                <h2 style="text-align: center; font-size: 2.8rem; margin: 0;">Nuestros Proyectos en Campo</h2>
+                <p style="text-align: center; color: #00aaff; margin-top: 10px;">Infraestructura de primer nivel en acción</p>
+            </div>
+
+            <div class="galeria-grid reveal-text">
+                <div class="zoom-img-container">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.Prs0nXvfiaO7OAji4H0ItQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tendido aéreo en torre 1">
+                </div>
+                <div class="zoom-img-container">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.VVCGAnlr2w3Qzxht3OFdJQHaHZ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tendido aéreo en torre 2">
+                </div>
+                <div class="zoom-img-container">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.cX-Jrg-u5UBFtJbPzt2qOAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mantenimiento de infraestructura">
+                </div>
+            </div>
+        </section>
     `,
     // ... dentro del objeto paginas:
+    //no quitar el stilo pq en css ya hay uno igual y no se puede cambiar el nombre, deberas dejarlo aqui 
     nosotros: `
         <section class="nosotros-header" style="background: transparent; padding: 80px 0 40px 0; padding-top: 30px;">
             <div class="container" style="text-align: center;">
@@ -85,22 +105,43 @@ const paginas = {
         </section>
 
        <section style="position: relative; width: 100%; height: 500px; overflow: hidden; margin-bottom: 60px;">
+
+       <style>
+        /* Definimos los pasos de la animación 'slideInFromLeft' */
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px); /* Empieza 100px a la izquierda */
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0); /* Termina en su posición original */
+            }
+        }
+
+        /* Creamos una clase para aplicar la animación */
+        .animate-from-left {
+            /* Ejecuta 'slideInFromLeft', dura 1.2 segundos, es suave al final, y mantiene el estado final visible */
+            animation: slideInFromLeft 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
+    </style>
             
             <img src="./fondo.jpg" alt="Infraestructura Novotech" 
-                 style="width: 100%; height: 100%; object-fit: cover; display: block;">
-            
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.65);"></div>
+         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.65); z-index: 1;"></div>
 
-            <div class="container" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 100%; display: flex; align-items: center; justify-content: flex-end;">
-                <div class="reveal-text" style="background: rgba(10, 20, 40, 0.85); backdrop-filter: blur(10px); padding: 40px; width: 450px; border: 1px solid rgba(0, 170, 255, 0.4); border-radius: 8px; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                    <div style="width: 50px; height: 4px; background: #00aaff; margin-bottom: 20px;"></div>
-                    <h2 style="font-size: 1.8rem; line-height: 1.2; margin-bottom: 15px; font-weight: 800;">SOMOS UNA EMPRESA NACIONAL CON LA RED MÁS IMPORTANTE DE FIBRA ÓPTICA QUE CONECTA A MÉXICO</h2>
-                    <p style="font-size: 0.95rem; line-height: 1.6; color: #ddd;">
-                        Nuestros altos niveles de calidad y eficiencia son el pilar de nuestra cultura organizacional. Operamos infraestructura de transporte de datos en toda la República.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <div class="container" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 100%; display: flex; align-items: center; justify-content: flex-end; z-index: 2;">
+        
+        <div class="reveal-text animate-from-left" style="background: rgba(10, 20, 40, 0.85); backdrop-filter: blur(10px); padding: 40px; width: 450px; border: 1px solid rgba(0, 170, 255, 0.4); border-radius: 8px; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <div style="width: 50px; height: 4px; background: #00aaff; margin-bottom: 20px;"></div>
+            <h2 style="font-size: 1.8rem; line-height: 1.2; margin-bottom: 15px; font-weight: 800;">SOMOS UNA EMPRESA NACIONAL CON LA RED MÁS IMPORTANTE DE FIBRA ÓPTICA QUE CONECTA A MÉXICO</h2>
+            <p style="font-size: 0.95rem; line-height: 1.6; color: #ddd;">
+                Nuestros altos niveles de calidad y eficiencia son el pilar de nuestra cultura organizacional. Operamos infraestructura de transporte de datos en toda la República.
+            </p>
+        </div>
+    </div>
+</section>
 
         <section class="container" style="padding-bottom: 80px;">
             <div class="grid-servicios">
@@ -143,6 +184,7 @@ const paginas = {
 
             </div>
         </section>
+
     `,
     servicios: `
         <section class="nosotros-header" style="background: transparent; padding-top: 30px;">
@@ -158,41 +200,76 @@ const paginas = {
                 <div class="service-card-horizontal">
                     <i class="fas fa-broadcast-tower"></i>
                     <h3>Tendido Aéreo</h3>
-                    <p>Experiencia de más de 1,600 km en instalación de F.O. por postería. Contamos con ingeniería propia para levantamiento, gestión y construcción.</p>
+                    <p>Experiencia comprobada en despliegue de redes de fibra óptica sobre infraestructura aérea, mediante el uso de postería y herrajes certificados. Contamos con ingeniería especializada para levantamiento en campo, diseño de rutas, cálculo de cargas mecánicas y ejecución de obra, garantizando cumplimiento de normativas técnicas y seguridad operativa.</p>
                 </div>
 
                 <div class="service-card-horizontal">
                     <i class="fas fa-project-diagram"></i>
                     <h3>Instalación Subterránea</h3>
-                    <p>Más de 2,500 km instalados utilizando métodos de soplado y jalado en ductos. Equipos de última generación.</p>
+                    <p>Implementación de redes de fibra óptica mediante canalizaciones subterráneas, utilizando técnicas de soplado y jalado en sistemas de ductería. Disponemos de equipos de alta tecnología para garantizar eficiencia en el tendido, minimizando pérdidas y optimizando tiempos de instalación en entornos urbanos y de alta densidad.</p>
                 </div>
 
                 <div class="service-card-horizontal">
                     <i class="fas fa-microchip"></i>
                     <h3>Caracterización</h3>
-                    <p>Más de 5,000 mediciones OTDR, PMD y CD. Especialistas en fibra oscura y certificación mediante reflectometría.</p>
+                    <p>Servicios de certificación y diagnóstico de enlaces de fibra óptica mediante pruebas especializadas como reflectometría (OTDR), medición de dispersión cromática (CD) y PMD. Aseguramos la integridad y desempeño de la red conforme a estándares internacionales, facilitando la validación de enlaces y detección de fallas.</p>
                 </div>
 
                 <div class="service-card-horizontal">
                     <i class="fas fa-tools"></i>
                     <h3>Obra Civil</h3>
-                    <p>Construcción de redes punto a punto, canalizado, registros y perforaciones direccionales con maquinaria pesada.</p>
+                    <p>Desarrollo de infraestructura física para telecomunicaciones, incluyendo canalizaciones, registros, bases estructurales y perforaciones direccionales. Ejecutamos proyectos bajo estrictos controles de calidad, seguridad y normatividad, garantizando la correcta preparación del entorno para el despliegue de redes.</p>
                 </div>
 
                 <div class="service-card-horizontal">
                     <i class="fas fa-drafting-compass"></i>
                     <h3>Diseño e Ingeniería</h3>
-                    <p>Personal capacitado para Site Survey, ingeniería a detalle, planos y gestoría ante autoridades internacionales.</p>
+                    <p>Desarrollo de soluciones integrales mediante estudios de factibilidad, levantamientos en campo (Site Survey) y elaboración de ingeniería a detalle. Generamos planos, memorias técnicas y gestionamos permisos ante autoridades, optimizando la arquitectura de red conforme a requerimientos técnicos y operativos.</p>
                 </div>
 
                 <div class="service-card-horizontal">
                     <i class="fas fa-network-wired"></i>
                     <h3>Redes FTT-X</h3>
-                    <p>Instalación y configuración de redes FTTH/FTTx. Diseño a la medida, cálculo de potencia y troubleshooting avanzado.</p>
+                    <p>Implementación y puesta en operación de redes de acceso basadas en fibra óptica (FTTH, FTTB, FTTC), incluyendo diseño personalizado, cálculo de presupuesto óptico, instalación de equipos activos y pasivos, así como pruebas y optimización del servicio para garantizar alto rendimiento y escalabilidad.</p>
                 </div>
 
             </div>
         </section>
+
+        <section style="position: relative; width: 100%; overflow: hidden; background-color: #000;">
+    
+    <video autoplay muted loop playsinline 
+           style="display: block; width: 100%; height: auto; z-index: 0;">
+        <source src="./earth.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1;"></div>
+
+    <div class="container" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 90%; height: 100%; display: flex; align-items: center; justify-content: space-between; z-index: 2;">
+        
+        <div class="reveal-text card-left" style="background: rgba(10, 20, 40, 0.8); backdrop-filter: blur(10px); padding: 30px; width: 400px; border: 1px solid rgba(0, 170, 255, 0.3); border-radius: 8px; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <div style="width: 40px; height: 3px; background: #00aaff; margin-bottom: 15px;"></div>
+            <h2 style="font-size: 1.4rem; line-height: 1.2; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">
+                Conectividad Global
+            </h2>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: #ddd;">
+                Nuestra infraestructura de fibra óptica cruza fronteras para mantener a México en el centro de la innovación tecnológica mundial.
+            </p>
+        </div>
+
+        <div class="reveal-text card-right" style="background: rgba(10, 20, 40, 0.8); backdrop-filter: blur(10px); padding: 30px; width: 400px; border: 1px solid rgba(0, 170, 255, 0.3); border-radius: 8px; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <div style="width: 40px; height: 3px; background: #00aaff; margin-bottom: 15px;"></div>
+            <h2 style="font-size: 1.4rem; line-height: 1.2; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">
+                Liderazgo Nacional
+            </h2>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: #ddd;">
+                Operamos la red más importante del país, garantizando eficiencia y calidad en el transporte de datos para cada estado de la República.
+            </p>
+        </div>
+
+    </div>
+</section>
     `,
     // ... dentro del objeto paginas:
     contacto: `
